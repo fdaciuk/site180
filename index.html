@@ -40,16 +40,18 @@
 			return {
 
 				init : function() {
+					this.change_url();
 					this.init_events();
 				},
 
 				init_events : function() {
-					window.addEventListener( 'hashchange', function( e ) {
-						var hash_url = window.location.hash.split( '#' ).join( '' );
+					window.addEventListener( 'hashchange', this.change_url );
+				}, // init_events
 
-						iframe.src = hash_url;
-					});
-				} // init_events
+				change_url : function() {
+					var hash_url = window.location.hash.split( '#' ).join( '' );
+					iframe.src = hash_url;
+				}
 
 			}; // return
 		})(); // s180
