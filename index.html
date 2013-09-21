@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Site 180</title>
+
+	<style>
+		html, body, iframe {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<iframe width="100%" height="100%"></iframe>
+
+	<script>
+	;(function( window, document, undefined ) {
+
+		'use strict';
+
+		var s180 = (function() {
+			return {
+
+				init : function() {
+					this.init_events();
+				},
+
+				init_events : function() {
+					window.addEventListener( 'hashchange', function( e ) {
+						var iframe = document.querySelector( 'iframe' ),
+							iframeDocument = iframe.contentDocument || iframe.contentWindow,
+							iframe_head = iframeDocument.querySelector( 'head' ),
+							iframe_body = iframeDocument.querySelector( 'body' ),
+							hash_url = window.location.hash.split( '#' ).join( '' );
+
+
+						iframe.src = hash_url;
+						console.log( location.hash, iframe, iframe_head );
+					});
+				} // init_events
+
+			}; // return
+		})(); // s180
+
+		s180.init();
+
+	})( window, document );
+	</script>
+</body>
+</html>
