@@ -17,11 +17,11 @@
 
 		iframe {
 			overflow: hidden;
-			-webkit-transform: rotate( 180deg );
-			-moz-transform: rotate( 180deg );
-			-o-transform: rotate( 180deg );
-			-ms-transform: rotate( 180deg );
-			transform: rotate( 180deg );
+			-webkit-transform : rotate( 180deg );
+			-moz-transform    : rotate( 180deg );
+			-o-transform      : rotate( 180deg );
+			-ms-transform     : rotate( 180deg );
+			transform         : rotate( 180deg );
 		}
 	</style>
 </head>
@@ -34,12 +34,13 @@
 		'use strict';
 
 		var s180 = (function() {
-			return {
 
-				var iframe = document.querySelector( '#iframe' ),
-					iframeDocument = iframe.contentDocument || iframe.contentWindow,
-					iframe_head = iframeDocument.querySelector( 'head' ),
-					iframe_body = iframeDocument.querySelector( 'body' );
+			var iframe = document.querySelector( '#iframe' ),
+				iframeDocument = iframe.contentDocument || iframe.contentWindow,
+				iframe_head = iframeDocument.querySelector( 'head' ),
+				iframe_body = iframeDocument.querySelector( 'body' );
+
+			return {
 
 				init : function() {
 					this.init_events();
